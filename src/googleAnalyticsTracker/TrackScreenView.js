@@ -22,7 +22,7 @@ function* trackScreenViewAsync(action) {
       const environment = yield call(AsyncStorage.getItem, '@global:environment');
 
       configReader = new ConfigReader(environment ? environment : ConfigReader.getDefaultEnvironment());
-    } catch {
+    } catch (exception) {
       configReader = new ConfigReader();
     }
 
@@ -46,7 +46,7 @@ function* trackScreenViewAsync(action) {
       emailAddress: userInfo.get('emailAddress'),
       emailAddressVerified: userInfo.get('emailAddressVerified'),
     });
-  } catch {} // eslint-disable-line no-empty
+  } catch (exception) {} // eslint-disable-line no-empty
 }
 
 export default function* watchTrackScreenView() {

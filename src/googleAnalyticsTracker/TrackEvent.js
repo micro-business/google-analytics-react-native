@@ -14,7 +14,7 @@ function* trackEventAsync(action) {
       const environment = yield call(AsyncStorage.getItem, '@global:environment');
 
       configReader = new ConfigReader(environment ? environment : ConfigReader.getDefaultEnvironment());
-    } catch {
+    } catch (exception) {
       configReader = new ConfigReader();
     }
 
@@ -36,7 +36,7 @@ function* trackEventAsync(action) {
     } else {
       tracker.trackEvent(action.payload.get('category'), action.payload.get('action'));
     }
-  } catch {} // eslint-disable-line no-empty
+  } catch (exception) {} // eslint-disable-line no-empty
 }
 
 export default function* watchTrackEvent() {
