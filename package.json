@@ -1,0 +1,64 @@
+{
+  "name": "@microbusiness/google-analytics-react-native",
+  "version": "0.0.1",
+  "description": "Micro Business Google Analytics React Native",
+  "main": "./src/index.js",
+  "scripts": {
+    "lint": "eslint --ext .jsx --ext .js src",
+    "fixlint": "eslint --fix --ext .jsx --ext .js src",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "publish-package": "npm publish",
+    "flow": "flow",
+    "precommit": "lint-staged"
+  },
+  "author": "Micro Business ltd<micro.business.ltd@gmail.com>",
+  "homepage": "https://bitbucket.org/microbusinessltd/micro-business-google-analytics-react-native#readme",
+  "peerDependencies": {
+    "@microbusiness/common-react-native": "^1.x",
+    "immutable": "^4.x",
+    "react-native": "^0.x",
+    "react-native-google-analytics-bridge": "^5.x",
+    "redux-saga": "^0.x"
+  },
+  "devDependencies": {
+    "@microbusiness/common-react-native": "^1.5.0",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^23.0.0-alpha.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react-native-stage-0": "^1.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-flowtype": "^2.46.1",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jest": "^21.15.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-react-native": "^3.2.1",
+    "flow-bin": "^0.69.0",
+    "husky": "^0.14.3",
+    "immutable": "^4.0.0-rc.9",
+    "jest": "^23.0.0-alpha.0",
+    "lint-staged": "^7.0.4",
+    "prettier": "^1.11.1",
+    "react-native": "^0.55.1",
+    "react-native-google-analytics-bridge": "^5.6.3",
+    "redux-saga": "^0.16.0"
+  },
+  "jest": {
+    "rootDir": "./src"
+  },
+  "pre-commit": "lint:staged",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org:microbusinessltd/micro-business-google-analytics-react-native.git"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --write --single-quote true --trailing-comma all --print-width 150",
+      "npm run fixlint",
+      "git add"
+    ]
+  }
+}
